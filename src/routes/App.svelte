@@ -22,15 +22,7 @@
 </script>
 
 <main>
-    <!-- Nav Bar -->
-
-    <!-- Application -->
     {#if !$isAuthenticated}
-        <ul>
-            <li>Login to start &#128272;</li>
-            <li>Create Tasks &#128221;</li>
-            <li>Tick off completed tasks &#9989;</li>
-        </ul>
         <a
             class="btn btn-primary btn-lg mr-auto ml-auto"
             href="/#"
