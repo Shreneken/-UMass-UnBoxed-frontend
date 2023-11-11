@@ -6,6 +6,8 @@
     import Main from "./Main.svelte";
     import { browser } from "$app/environment";
 
+    let isAuthenticated;
+
     onMount(async () => {
         const urlParams = new URLSearchParams(window.location.search);
 
@@ -14,6 +16,7 @@
                 token: urlParams.get("token"),
                 uid: urlParams.get("uid"),
             }));
+            isAuthenticated = true;
         }
 
         goto("?");
@@ -26,13 +29,14 @@
             if (browser) {
                 localStorage.setItem("uid", updatedUser.uid);
                 localStorage.setItem("token", updatedUser.token);
+                isAuthenticated = true;
             }
         }
     });
 </script>
 
 <main>
-    {#if browser && localStorage.getItem("uid") !== null}
+    {#if isAuthenticated}
         <Main />
     {:else}
         <button on:click={() => goto(`${SERVER_URL}/login`)}>Log in</button>
