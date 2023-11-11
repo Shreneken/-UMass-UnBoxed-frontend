@@ -3,12 +3,12 @@ import { SERVER_URL } from "../utils/constants.js";
 
 export const user = writable(null);
 
-export async function makeAuthenticatedRequest() {
+export async function makeAuthenticatedRequest(endpoint) {
     const [uid, token] = [
         localStorage.getItem("uid"),
         localStorage.getItem("token"),
     ];
-    return fetch(`${SERVER_URL}/api/user?uid=${uid}`, {
+    return fetch(`${SERVER_URL}/api/${endpoint}?uid=${uid}`, {
         headers: {
             Authorization: `Bearer ${token}`,
         },
