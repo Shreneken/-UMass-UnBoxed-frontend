@@ -6,7 +6,7 @@
     import Main from "./Main.svelte";
     import { browser } from "$app/environment";
 
-    let isAuthenticated;
+    let isAuthenticated = false;
 
     onMount(async () => {
         const urlParams = new URLSearchParams(window.location.search);
@@ -16,9 +16,11 @@
                 token: urlParams.get("token"),
                 uid: urlParams.get("uid"),
             }));
+        } else if (localStorage.getItem("uid") !== null) {
             isAuthenticated = true;
         }
 
+        // TODO - fix this later
         goto("?");
     });
 
@@ -36,7 +38,7 @@
 </script>
 
 <main>
-    {#if isAuthenticated}
+    {#if isAuthenticated === true}
         <Main />
     {:else}
         <button on:click={() => goto(`${SERVER_URL}/login`)}>Log in</button>
