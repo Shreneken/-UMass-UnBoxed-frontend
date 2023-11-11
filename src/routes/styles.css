@@ -6,22 +6,73 @@
 #top-container {
   display: inline-flex;
   width: 100%;
-  height: 80px;
-  background-color: yellowgreen;
+  min-height: 80px;
   margin: 0;
+  position: sticky;
 }
 .top-item {
   flex: 1;
   margin: auto;
   padding: auto;
   text-align: center;
+  height: 80px;
+  background-color: yellowgreen;
+  border: 0;
+  cursor: pointer;
+  transition: 1s box-shadow;
 }
+.top-item:hover {
+  box-shadow: 0 5px 35px 0px rgba(0, 0, 0, 0.1);
+  background-color: rgb(146, 197, 45);
+}
+
 .top-item:last-child {
   flex: 0 0 10%;
 }
 .top-item:not(:last-child) {
   flex: 0 0 30%;
 }
+
+#search-bar {
+  display: inline-flex;
+  width: 100%;
+  min-height: 30px;
+  margin: 0;
+  position: sticky;
+}
+
+.search-item {
+  flex: 1;
+  /* margin: auto; */
+  /* text-align: center; */
+  height: 1fr;
+  background-color: white;
+  border: solid 1px gray;
+  margin: 0;
+  padding: 1px;
+}
+.search-item:focus {
+  outline: none;
+}
+
+.search-item:first-child {
+  flex: 0 0 20%;
+  text-align: center;
+}
+.search-item:first-child:hover {
+  cursor: pointer;
+}
+.search-item:nth-child(2) {
+  flex: 0 0 70%;
+  padding-left: 10px;
+}
+.search-item:last-child {
+  flex: 0 0 10%;
+}
+.search-item:last-child:hover {
+  cursor: pointer;
+}
+
 #main-view {
   flex-grow: 1;
   background-color: gray;
