@@ -6,8 +6,8 @@
 <div id="post-container">
   <img src={post.getImage()} id="post-image" alt="SAD" />
   <div id="post-content">
-    <h1 id="post-name">{post.getName()}</h1>
-    <h2 id="post-price">${post.getPrice()}</h2>
+    <span id="post-name">{post.getName()}</span>
+    <span id="post-price">${post.getPrice()}</span>
   </div>
 </div>
 

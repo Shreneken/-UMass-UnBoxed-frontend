@@ -10,7 +10,6 @@
   flex-grow: 1;
   position: relative;
   max-width: 20%;
-  background-color: white;
   border-right: solid black 1px;
   display: flex;
   flex-direction: column;
@@ -21,12 +20,13 @@
   flex: 1;
   border: 0;
   color: #881c1c;
-  font-size: larger;
+  font-size: large;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 30px;
+  padding-right: 20px;
   padding-left: 15px;
+  background-color: white;
 }
 .side-item-unselected:hover {
   background-color: #cdcdcd;
@@ -37,12 +37,12 @@
   flex: 1;
   border: 0;
   background-color: #881c1c;
-  font-size: larger;
+  font-size: large;
   color: #e6e6e6;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 30px;
+  padding-right: 70px;
   padding-left: 15px;
 }
 

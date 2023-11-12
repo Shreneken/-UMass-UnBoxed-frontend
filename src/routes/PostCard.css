@@ -7,12 +7,12 @@
   margin: 10px;
   border-radius: 4px;
   background-color: transparent;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); */
 }
 #post-container:hover {
   background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 #post-image {
   width: 90%;
@@ -35,12 +35,15 @@
 
 #post-name {
   margin: 0;
-  margin-left: 5px;
+  margin-left: 10px;
   font-weight: bold;
+  font-size: x-large;
 }
 
 #post-price {
   margin-top: 7px;
-  margin-left: 5px;
+  margin-left: 10px;
   margin-bottom: 10px;
+  font-size: large;
+  font-weight: bold;
 }
