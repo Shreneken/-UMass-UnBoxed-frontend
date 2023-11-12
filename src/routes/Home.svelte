@@ -32,9 +32,7 @@
       </button>
     {/each}
   </div>
-  <div id="postings">
-    <Postings {listFilters} />
-  </div>
+  <Postings {listFilters} />
 </div>
 
 <style>
