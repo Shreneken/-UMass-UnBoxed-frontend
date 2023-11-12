@@ -40,29 +40,16 @@
 }
 .top-item:nth-child(2) {
   flex: 0 0 35%;
-  background: #333333; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #dd1818,
-    #802727
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #dd1818, #802727);
+  background: #881c1c;
 }
 .top-item:nth-child(3) {
   flex: 0 0 35%;
-  background: #333333; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #802727,
-    #443030
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #802727, #443030);
+  background: #881c1c;
 }
 
 .top-item:last-child {
   flex: 0 0 10%;
-  /* background: linear-gradient(#443030, #333333); */
-  background: linear-gradient(to right, #443030, #564545);
+  background: #881c1c;
 }
 #account-logo {
   width: 70%;
