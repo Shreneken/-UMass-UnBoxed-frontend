@@ -1,8 +1,11 @@
 <script>
+    import GetPost from "./GetPost.svelte";
     import { makeAuthenticatedRequest } from "./auth/store.js";
-    import { Postings } from "./utils/postings.js";
+    import { Postings, Post } from "./utils/postings.js";
     export let listFilters = {};
     console.log("List filters " + JSON.stringify(listFilters));
+
+    let showPost = false;
 
     async function dummyPostsInfo() {
         return [
@@ -37,3 +40,15 @@
 {:catch someError}
     System error: {someError.message}.
 {/await}
+
+<button on:click={() => (showPost = true)}>Show Post</button>
+<GetPost
+    bind:show={showPost}
+    post={Post.fromJson({
+        name: "name",
+        price: "price",
+        image: "data:image/png;base64",
+        condition: "condition",
+        sellerId: "sellerId",
+    })}
+/>
