@@ -18,19 +18,23 @@
 {#await makeAuthenticatedRequest("postings/get", listFilters)}
     <LoadingScreen />
 {:then postsInfo}
-    <div id="posting-grid">
-        {#each Postings.fromJson(postsInfo.postings).getListPosts() as post}
-            <div
-                id="post-grid-item"
-                on:click={() => {
-                    showPost = true;
-                    currPost = post;
-                }}
-            >
-                <PostCard {post} />
-            </div>
-        {/each}
-    </div>
+    {#if postsInfo.postings.length === 0}
+        <div>No Results Found.</div>
+    {:else}
+        <div id="posting-grid">
+            {#each Postings.fromJson(postsInfo.postings).getListPosts() as post}
+                <div
+                    id="post-grid-item"
+                    on:click={() => {
+                        showPost = true;
+                        currPost = post;
+                    }}
+                >
+                    <PostCard {post} />
+                </div>
+            {/each}
+        </div>
+    {/if}
 {:catch someError}
     System error: {someError.message}.
 {/await}
