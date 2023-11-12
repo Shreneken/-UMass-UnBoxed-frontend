@@ -7,18 +7,23 @@
   import Postings from "./Postings.svelte";
   import { AREAS } from "./utils/constants.js";
 
+  let selectedHead = ["Home"];
+
   function homeClick(e) {
     e.preventDefault();
     $viewStore.filterData = {};
     $viewStore.current = $viewStore.home;
+    selectedHead = ["Home"];
   }
   function postingsClick(e) {
     e.preventDefault();
     $viewStore.current = $viewStore.userPostings;
+    selectedHead = ["MyListings"];
   }
   function accountClick(e) {
     e.preventDefault();
     $viewStore.current = $viewStore.account;
+    selectedHead = ["Account"];
   }
 
   let queryText = "";
@@ -41,12 +46,32 @@
 
 <div id="container">
   <div id="top-container">
-    <img id="logo" class="top-item" src="/UMASS-UNBOXED-FULL.png" alt="logo" />
-    <button id="home-btn" class="top-item" on:click={homeClick}> Home </button>
-    <button id="your-postings" class="top-item" on:click={postingsClick}>
+    <img id="logo" class="top-item-unselected" src="/UMASS-UNBOXED-FULL.png" alt="logo" />
+    <button
+      id="home-btn"
+      class={selectedHead.includes("Home")
+        ? "top-item-selected"
+        : "top-item-unselected"}
+      on:click={homeClick}
+    >
+      Home
+    </button>
+    <button
+      id="your-postings"
+      class={selectedHead.includes("MyListings")
+        ? "top-item-selected"
+        : "top-item-unselected"}
+      on:click={postingsClick}
+    >
       My Listings
     </button>
-    <button id="account" class="top-item" on:click={accountClick}>
+    <button
+      id="account"
+      class={selectedHead.includes("Account")
+        ? "top-item-selected"
+        : "top-item-unselected"}
+      on:click={accountClick}
+    >
       <img src="/white-profile.png" alt="Account" id="account-logo" />
     </button>
   </div>
@@ -69,7 +94,7 @@
     />
     <button class="search-item" id="search-logo" on:click={handleSubmitClick}>
       <img src="/search-static.png" alt="Search" id="search-static" />
-      <img src="/search-animate.gif" alt="Search" id="search-animate"/>
+      <img src="/search-animate.gif" alt="Search" id="search-animate" />
     </button>
   </div>
   <div id="main-view">
