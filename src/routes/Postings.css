@@ -1,0 +1,14 @@
+#posting-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  margin-left: 50px;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+#post-grid-item {
+  width: auto;
+  padding: auto;
+}

@@ -14,7 +14,7 @@
     formData.append("description", description);
     formData.append("image", image);
     await makeAuthenticatedRequest("/create", formData);
-    close();
+    show = false;
   }
 </script>
 

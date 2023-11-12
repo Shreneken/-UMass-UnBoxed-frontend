@@ -1,25 +1,23 @@
 <script>
-    import { AREAS } from "./utils/constants.js";
-    import { viewStore } from "./ViewStore.js";
+  import { AREAS } from "./utils/constants.js";
+  import { viewStore } from "./ViewStore.js";
+  import Postings from "./Postings.svelte";
 
-    function handleAreaClick(e) {
-        const areaName = e.target.id;
-        console.log(`Clicked by ${areaName}`);
-        $viewStore.current = $viewStore.allPostings;
-        $viewStore.filterData = { "residential-hall": areaName };
-    }
+  function handleAreaClick(e) {
+    const areaName = e.target.id;
+    console.log(`Clicked by ${areaName}`);
+    $viewStore.current = $viewStore.allPostings;
+    $viewStore.filterData = { "residential-hall": areaName };
+  }
 </script>
 
 <div id="home-container">
-    <div id="grid">
-        {#each Object.keys(AREAS) as area}
-            <button class="grid-item" id={area} on:click={handleAreaClick}>
-                {AREAS[area]}
-            </button>
-        {/each}
-    </div>
+  <div id="side-bar" />
+  <div id="postings">
+    <Postings />
+  </div>
 </div>
 
 <style>
-    @import "./Home.css";
+  @import "./Home.css";
 </style>

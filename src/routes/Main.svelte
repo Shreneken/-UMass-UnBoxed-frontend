@@ -6,6 +6,7 @@
     import CreatePost from "./CreatePost.svelte";
     import UserPostings from "./UserPostings.svelte";
     import Postings from "./Postings.svelte";
+    import { AREAS } from "./utils/constants.js";
 
     function homeClick(e) {
         e.preventDefault();
@@ -21,7 +22,7 @@
     }
 
     let queryText = "";
-    let category = "";
+    let category = "All Areas";
     function handleSubmitClick(e) {
         e.preventDefault();
         $viewStore.current = $viewStore.allPostings;
@@ -36,7 +37,7 @@
 
 <div id="container">
     <div id="top-container">
-        <img id="logo" class="top-item" src="asda" alt="logo" />
+        <img id="logo" class="top-item" src="/hacklogo.jpg" alt="logo" />
         <button id="home-btn" class="top-item" on:click={homeClick}>
             Home
         </button>
@@ -49,9 +50,10 @@
     </div>
     <div id="search-bar">
         <select name="Category" class="search-item" bind:value={category}>
-            {#each CATEGORIES as c}
-                <option value={c}>{c}</option>
-            {/each}
+            <option value="All Areas" selected>All Areas</option>
+            {#each Object.values(AREAS) as area}
+                <option value={area}>{area}</option>
+            {/each} 
         </select>
         <input
             type="text"
