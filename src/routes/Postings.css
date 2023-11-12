@@ -19,3 +19,11 @@
   /* border: solid black 4px; */
   cursor: pointer;
 }
+
+.no-results {
+  width: 100%;
+  font-size: 32px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

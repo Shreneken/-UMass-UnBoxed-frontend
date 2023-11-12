@@ -16,7 +16,7 @@
     <LoadingScreen />
 {:then postsInfo}
     {#if postsInfo.postings.length === 0}
-        <div>No Results Found.</div>
+        <div class="no-results">No Results Found.</div>
     {:else}
         <div id="posting-grid">
             {#each Postings.fromJson(postsInfo.postings).getListPosts() as post}
