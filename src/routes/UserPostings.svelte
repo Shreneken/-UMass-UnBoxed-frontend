@@ -8,7 +8,7 @@
     let currPost = null;
 </script>
 
-{#await makeAuthenticatedRequest("postings/get", { user: true })}
+{#await makeAuthenticatedRequest( "postings/get", { user: true, excludeUser: false } )}
     Loading details...
 {:then postsInfo}
     <div id="posting-grid">
