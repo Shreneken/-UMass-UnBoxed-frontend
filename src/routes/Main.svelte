@@ -21,20 +21,11 @@
         $viewStore.current = $viewStore.account;
     }
 
-<<<<<<< Updated upstream
-  let queryText = "";
-  let category = "All Areas";
-  function handleSubmitClick(e) {
-    e.preventDefault();
-    $viewStore.filterData = { category: category, queryText: queryText };
-  }
-=======
     let queryText = "";
     let residentialHall = "";
     function handleSubmitClick(e) {
         e.preventDefault();
         $viewStore.current = $viewStore.allPostings;
->>>>>>> Stashed changes
 
         if (queryText) {
             $viewStore.filterData.queryText = queryText;
@@ -52,49 +43,6 @@
 </script>
 
 <div id="container">
-<<<<<<< Updated upstream
-  <div id="top-container">
-    <img id="logo" class="top-item" src="/UMASS-UNBOXED-FULL.png" alt="logo" />
-    <button id="home-btn" class="top-item" on:click={homeClick}> Home </button>
-    <button id="your-postings" class="top-item" on:click={postingsClick}>
-      My Listings
-    </button>
-    <button id="account" class="top-item" on:click={accountClick}>
-      <img src="/white-profile.png" alt="Account" id="account-logo"/>
-    </button>
-  </div>
-  <div id="search-bar">
-    <select name="Category" class="search-item" bind:value={category}>
-      <option value="All Areas" selected>All Areas</option>
-      {#each AREAS as area}
-        <option value={area}>{area}</option>
-      {/each}
-    </select>
-    <input
-      type="text"
-      placeholder="Search for items"
-      bind:value={queryText}
-      class="search-item"
-    />
-    <button id="submit" class="search-item" on:click={handleSubmitClick}
-      >Submit</button
-    >
-    <div />
-  </div>
-  <div id="main-view">
-    {#if $viewStore.current === $viewStore.home}
-      <Home />
-    {:else if $viewStore.current === $viewStore.userPostings}
-      <UserPostings />
-    {:else if $viewStore.current === $viewStore.account}
-      <Account />
-    {:else if $viewStore.current === $viewStore.allPostings}
-      <Postings listFilters={$viewStore.filterData} />
-    {/if}
-    <button id="create-btn" on:click={handleCreateClick}>+</button>
-    <CreatePost bind:show={showCreatePost} />
-  </div>
-=======
     <div id="top-container">
         <img
             id="logo"
@@ -106,18 +54,14 @@
             Home
         </button>
         <button id="your-postings" class="top-item" on:click={postingsClick}>
-            Postings
+            My Listings
         </button>
         <button id="account" class="top-item" on:click={accountClick}>
             <img src="/white-profile.png" alt="Account" id="account-logo" />
         </button>
     </div>
     <div id="search-bar">
-        <select
-            name="Category"
-            class="search-item"
-            bind:value={residentialHall}
-        >
+        <select name="Residential Hall" class="search-item" bind:value={residentialHall}>
             <option value="All Areas" selected>All Areas</option>
             {#each AREAS as area}
                 <option value={area}>{area}</option>
@@ -147,7 +91,6 @@
         <button id="create-btn" on:click={handleCreateClick}>+</button>
         <CreatePost bind:show={showCreatePost} />
     </div>
->>>>>>> Stashed changes
 </div>
 
 <style>
