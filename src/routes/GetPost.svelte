@@ -63,6 +63,7 @@
   #inner1 {
     text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap;
     padding-top: 20px;
     font-weight: bold;    
     font-size: x-large;

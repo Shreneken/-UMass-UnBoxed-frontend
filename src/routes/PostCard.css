@@ -36,6 +36,7 @@
 #post-name {
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
   margin: 0;
   margin-left: 10px;
   font-weight: bold;
