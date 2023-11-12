@@ -2,7 +2,7 @@
   import { viewStore } from "./ViewStore.js";
   import Home from "./Home.svelte";
   import Account from "./Account.svelte";
-  import UserPostings from "./UserPostings.svelte";
+  import Postings from "./Postings.svelte";
   import { CATEGORIES } from "./utils/constants.js";
   import CreatePost from "./CreatePost.svelte";
 
@@ -56,7 +56,7 @@
     {#if $viewStore.current === $viewStore.home}
       <Home />
     {:else if $viewStore.current === $viewStore.userPostings}
-      <UserPostings />
+      <Postings />
     {:else if $viewStore.current === $viewStore.account}
       <Account />
     {/if}
