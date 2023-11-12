@@ -2,7 +2,7 @@
     import { AREAS, CATEGORIES, CATEGORIES_IMAGES } from "./utils/constants.js";
     import { viewStore } from "./ViewStore.js";
     import Postings from "./Postings.svelte";
-    let listFilters = {};
+    export let listFilters = {};
     let selectedCategories = [];
     function handleCategoryClick(event) {
         const currentCategory = event.target.value;
