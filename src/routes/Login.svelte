@@ -11,10 +11,10 @@
     onMount(async () => {
         const urlParams = new URLSearchParams(window.location.search);
 
-        if (urlParams.has("token") && urlParams.has("uid")) {
+        if (urlParams.has("token") && urlParams.has("email")) {
             user.update((_) => ({
                 token: urlParams.get("token"),
-                uid: urlParams.get("uid"),
+                uid: urlParams.get("email"),
             }));
         } else if (localStorage.getItem("uid") !== null) {
             isAuthenticated = true;

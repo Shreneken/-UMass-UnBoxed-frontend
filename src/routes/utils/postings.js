@@ -1,10 +1,22 @@
 export class Post {
-    constructor(name, price, image, condition, sellerId) {
+    constructor(
+        postId,
+        name,
+        price,
+        image,
+        condition,
+        sellerId,
+        categories,
+        residentialHall
+    ) {
+        this.postId = postId;
         this.name = name;
         this.price = price;
         this.image = image;
         this.condition = condition;
         this.sellerId = sellerId;
+        this.categories = categories;
+        this.residentialHall = residentialHall;
     }
 
     getName() {
@@ -27,17 +39,25 @@ export class Post {
         return this.condition;
     }
 
+    getPostId() {
+        return this.postId;
+    }
+
     static create() {
         return new Post("Loading...");
     }
 
     static fromJson(postData) {
+        console.log("Posdata " + JSON.stringify(postData));
         return new Post(
-            postData.name,
+            postData.id,
+            postData.product_name,
             postData.price,
-            postData.image,
+            "data:image/png;base64, " + postData.picture,
             postData.condition,
-            postData.sellerId
+            postData.sellerId,
+            postData.categories,
+            postData.residential_hall
         );
     }
 }

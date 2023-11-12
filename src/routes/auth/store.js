@@ -3,7 +3,12 @@ import { SERVER_URL } from "../utils/constants.js";
 
 export const user = writable(null);
 
-export async function makeAuthenticatedRequest(endpoint, reqBody, queryBody) {
+export async function makeAuthenticatedRequest(
+    endpoint,
+    reqBody,
+    queryBody,
+    isFormData
+) {
     const [uid, token] = [
         localStorage.getItem("uid"),
         localStorage.getItem("token"),
@@ -11,11 +16,13 @@ export async function makeAuthenticatedRequest(endpoint, reqBody, queryBody) {
 
     let response;
     queryBody = queryBody || {};
-    queryBody["uid"] = uid;
 
     if (reqBody === undefined) {
         response = fetch(
-            `${SERVER_URL}/api/${endpoint}?` + queryBody.join("&"),
+            `${SERVER_URL}/${endpoint}` +
+                (Object.keys(queryBody).length !== 0
+                    ? "?" + new URLSearchParams(queryBody).toString()
+                    : ""),
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -23,15 +30,14 @@ export async function makeAuthenticatedRequest(endpoint, reqBody, queryBody) {
             }
         );
     } else {
-        response = fetch(`${SERVER_URL}/api/${endpoint}?uid=${uid}`, {
+        response = fetch(`${SERVER_URL}/${endpoint}?uid=${uid}`, {
             method: "POST",
             headers: {
-                Accept: "application/json",
                 Authorization: `Bearer ${token}`,
             },
-            body: JSON.stringify(reqBody),
+            body: isFormData === true ? reqBody : JSON.stringify(reqBody),
         });
     }
 
-    return response.json();
+    return response.then((r) => r.json());
 }

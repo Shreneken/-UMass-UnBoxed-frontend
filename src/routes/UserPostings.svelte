@@ -1,33 +1,12 @@
 <script>
     import { makeAuthenticatedRequest } from "./auth/store.js";
-    import { user } from "./auth/store.js";
     import { Postings } from "./utils/postings.js";
-
-    async function dummyPostsInfo() {
-        return [
-            {
-                name: "name",
-                price: "price",
-                image: "image",
-                condition: "condition",
-                sellerId: "sellerId",
-            },
-            {
-                name: "name2",
-                price: "price2",
-                image: "image2",
-                condition: "condition2",
-                sellerId: "sellerId2",
-            },
-        ];
-    }
 </script>
 
-<!-- {#await makeAuthenticatedRequest("posts", undefined, {"user": true})} -->
-{#await dummyPostsInfo()}
+{#await makeAuthenticatedRequest("postings/get", undefined, { user: true })}
     Loading details...
 {:then postsInfo}
-    {#each Postings.fromJson(postsInfo).getListPosts() as post}
+    {#each Postings.fromJson(postsInfo.postings).getListPosts() as post}
         <p><b>Name: </b> {post.getName()}</p>
         <p><b>Price: </b> {post.getPrice()}</p>
         <p><b>Condition: </b> {post.getCondition()}</p>

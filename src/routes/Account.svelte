@@ -12,8 +12,7 @@
     }
 </script>
 
-<!-- {#await makeAuthenticatedRequest("user")} -->
-{#await dummyUserInfo("user")}
+{#await makeAuthenticatedRequest("user/get")}
     Loading details...
 {:then userInfo}
     <br />
