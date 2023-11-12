@@ -40,6 +40,9 @@
             undefined,
             true
         );
+
+        location.reload();
+
         show = false;
         name = null;
         price = null;
