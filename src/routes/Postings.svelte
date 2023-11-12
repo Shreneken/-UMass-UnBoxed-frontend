@@ -27,7 +27,7 @@
     }
 </script>
 
-<!-- {#await makeAuthenticatedRequest("posts", undefined, listFilters)} -->
+<!-- {#await makeAuthenticatedRequest("posts", listFilters)} -->
 {#await dummyPostsInfo()}
     Loading details...
 {:then postsInfo}
