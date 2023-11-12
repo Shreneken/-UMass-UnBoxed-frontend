@@ -1,0 +1,39 @@
+#post-container {
+  width: 250px;
+  height: 240px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: solid black 2px;
+  margin: 10px;
+  border-radius: 4px;
+}
+#post-image {
+  width: 100%;
+  height: 60%;
+  margin-top: 0;
+  object-fit: cover;
+}
+
+#post-content {
+  background-color: white;
+  margin: 0;
+  height: 40%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+#post-name {
+  margin: 0;
+  margin-left: 5px;
+  color: black;
+  font-weight: bold;
+}
+
+#post-price {
+  margin-top: 7px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}

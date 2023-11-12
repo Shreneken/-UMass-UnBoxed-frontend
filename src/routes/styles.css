@@ -31,9 +31,6 @@
   background-color: #ab2e2e;
 }
 
-.top-item:last-child {
-  flex: 0 0 10%;
-}
 .top-item:first-child {
   flex: 0 0 20%;
   object-fit: contain;
@@ -43,11 +40,29 @@
 }
 .top-item:nth-child(2) {
   flex: 0 0 35%;
+  background: #333333; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #dd1818,
+    #802727
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #dd1818, #802727);
 }
 .top-item:nth-child(3) {
   flex: 0 0 35%;
+  background: #333333; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #802727,
+    #443030
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #802727, #443030);
 }
 
+.top-item:last-child {
+  flex: 0 0 10%;
+  background: linear-gradient(#443030, #333333);
+}
 #account-logo {
   width: 70%;
   height: 70%;
@@ -96,11 +111,22 @@
 
 #main-view {
   flex-grow: 1;
-  background-image: url("/umass-bg.jpg");
+  /* background-image: url("/umass-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
-  opacity: 0.9;
+  background-size: cover; */
+  /* opacity: 0.9; */
+  background: #333333; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #dd1818,
+    #333333
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #dd1818,
+    #333333
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 #create-btn {
   position: fixed;

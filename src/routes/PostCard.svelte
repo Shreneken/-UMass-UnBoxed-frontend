@@ -6,11 +6,11 @@
 <div id="post-container">
   <img src={post.getImage()} id="post-image" alt="SAD" />
   <div id="post-content">
-    <h2 id="post-name">{post.getName()}</h2>
-    <h1 id="post-price">${post.getPrice()}</h1>
+    <h1 id="post-name">{post.getName()}</h1>
+    <h2 id="post-price">${post.getPrice()}</h2>
   </div>
 </div>
 
 <style>
-    @import "./Post.css";
+    @import "./PostCard.css";
 </style>
