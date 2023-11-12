@@ -3,13 +3,14 @@
     import { Postings } from "./utils/postings.js";
     import GetPost from "./GetPost.svelte";
     import PostCard from "./PostCard.svelte";
+    import LoadingScreen from "./LoadingScreen.svelte";
 
     let showPost = false;
     let currPost = null;
 </script>
 
 {#await makeAuthenticatedRequest( "postings/get", { user: true, excludeUser: false } )}
-    Loading details...
+    <LoadingScreen />
 {:then postsInfo}
     <div id="posting-grid">
         {#each Postings.fromJson(postsInfo.postings).getListPosts() as post}

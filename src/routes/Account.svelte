@@ -1,4 +1,5 @@
 <script>
+  import LoadingScreen from "./LoadingScreen.svelte";
   import { makeAuthenticatedRequest, user } from "./auth/store.js";
   import { SERVER_URL } from "./utils/constants.js";
 
@@ -10,7 +11,7 @@
 </script>
 
 {#await makeAuthenticatedRequest("user/get")}
-  Loading details...
+    <LoadingScreen />
 {:then userInfo}
   <br />
   <div class="card">

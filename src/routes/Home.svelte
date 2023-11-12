@@ -1,6 +1,5 @@
 <script>
-    import { AREAS, CATEGORIES, CATEGORIES_IMAGES } from "./utils/constants.js";
-    import { viewStore } from "./ViewStore.js";
+    import { CATEGORIES, CATEGORIES_IMAGES } from "./utils/constants.js";
     import Postings from "./Postings.svelte";
     export let listFilters = {};
     let selectedCategories = [];

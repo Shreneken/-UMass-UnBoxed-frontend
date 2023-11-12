@@ -1,29 +1,25 @@
-<script>
-  export let text = "Loading...";
-</script>
-
 <div class="loading-screen">
   <div class="spinner" />
-  <p>{text}</p>
 </div>
 
 <style>
   .loading-screen {
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f8f9fa; /* Set your background color */
+    background-color: #ffffff; /* Set your background color */
     color: #343a40; /* Set your text color */
   }
 
   .spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #343a40; /* Set your spinner color */
+    border: 4px solid #ffffff;
+    border-top: 4px solid #881c1c; /* Set your spinner color */
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
     animation: spin 1s linear infinite;
   }
 

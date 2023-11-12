@@ -3,6 +3,7 @@
     import { makeAuthenticatedRequest } from "./auth/store.js";
     import { Postings, Post } from "./utils/postings.js";
     import PostCard from "./PostCard.svelte";
+    import LoadingScreen from "./LoadingScreen.svelte";
 
     export let listFilters = {};
     console.log("List filters " + JSON.stringify(listFilters));
@@ -15,7 +16,7 @@
 </script>
 
 {#await makeAuthenticatedRequest("postings/get", listFilters)}
-    Loading details...
+    <LoadingScreen />
 {:then postsInfo}
     <div id="posting-grid">
         {#each Postings.fromJson(postsInfo.postings).getListPosts() as post}
