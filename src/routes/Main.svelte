@@ -4,6 +4,7 @@
   import Account from "./Account.svelte";
   import UserPostings from "./UserPostings.svelte";
   import { CATEGORIES } from "./utils/constants.js";
+  import CreatePost from "./CreatePost.svelte";
 
   function homeClick(e) {
     e.preventDefault();
@@ -18,7 +19,12 @@
     $viewStore.current = $viewStore.account;
   }
   function handleSubmitClick(e) {
-    alert("You clickd submit!");
+    alert("You clicked submit!");
+  }
+
+  let showCreatePost = false;
+  function handleCreateClick() {
+    showCreatePost = true;
   }
 
 </script>
@@ -41,7 +47,9 @@
       {/each}
     </select>
     <input type="text" placeholder="Search for items" class="search-item" />
-    <button id="submit" class="search-item" on:click={handleSubmitClick}>Submit</button>
+    <button id="submit" class="search-item" on:click={handleSubmitClick}
+      >Submit</button
+    >
     <div />
   </div>
   <div id="main-view">
@@ -52,6 +60,8 @@
     {:else if $viewStore.current === $viewStore.account}
       <Account />
     {/if}
+    <button id="create-btn" on:click={handleCreateClick}>+</button>
+    <CreatePost bind:show={showCreatePost}/>
   </div>
 </div>
 

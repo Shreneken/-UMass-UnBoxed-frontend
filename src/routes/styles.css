@@ -77,3 +77,16 @@
   flex-grow: 1;
   background-color: gray;
 }
+#create-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: solid black 1px;
+  font-size: xx-large;
+}
+#create-btn:hover{
+  cursor: pointer;
+}
