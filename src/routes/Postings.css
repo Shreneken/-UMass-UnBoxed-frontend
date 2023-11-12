@@ -1,13 +1,16 @@
 #posting-grid {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, 250px);
   grid-auto-rows: min-content;
-  gap: 0px;
-  margin-left: 10px;
+  justify-content: space-evenly;
+  gap: 30px;
+  padding-left: 1%;
+  padding-right: 1%;
   margin-top: 10px;
   margin-bottom: 100px;
   overflow: scroll;
+  width: 100%;
   height: calc(100% - (80px + 35px));
 }
 
