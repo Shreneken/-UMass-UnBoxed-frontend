@@ -1,8 +1,10 @@
 export class Post {
-    constructor(name, price, image) {
+    constructor(name, price, image, condition, sellerId) {
         this.name = name;
         this.price = price;
         this.image = image;
+        this.condition = condition;
+        this.sellerId = sellerId;
     }
 
     getName() {
@@ -15,6 +17,14 @@ export class Post {
 
     getImage() {
         return this.image;
+    }
+
+    getSellerId() {
+        return this.sellerId;
+    }
+
+    getCondition() {
+        return this.condition;
     }
 
     static create() {
