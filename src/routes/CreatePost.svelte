@@ -57,7 +57,7 @@
 {#if show}
     <div class="modal">
         <div class="modal-content">
-            <h1 id="title">Create Post</h1>
+            <h1 id="title">Create Listing</h1>
             <span class="close" on:click={close}>✕</span>
             <!-- Your modal content goes here -->
             <form on:submit|preventDefault={handleSubmit} id="form">
