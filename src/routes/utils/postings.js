@@ -48,7 +48,6 @@ export class Post {
     }
 
     static fromJson(postData) {
-        console.log("Posdata " + JSON.stringify(postData));
         return new Post(
             postData.id,
             postData.product_name,

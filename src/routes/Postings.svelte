@@ -11,7 +11,7 @@
     let currPost = null;
 </script>
 
-{#await makeAuthenticatedRequest("postings/get", undefined, listFilters)}
+{#await makeAuthenticatedRequest("postings/get", listFilters)}
     Loading details...
 {:then postsInfo}
     <div id="posting-grid">
