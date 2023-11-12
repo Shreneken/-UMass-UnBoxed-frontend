@@ -99,12 +99,12 @@
   cursor: pointer;
 }
 .search-item:nth-child(2) {
-  flex: 0 0 70%;
+  flex: 0 0 75%;
   padding-left: 10px;
   font-size: large;
 }
 .search-item:last-child {
-  flex: 0 0 15%;
+  flex: 0 0 10%;
 }
 .search-item:last-child:hover {
   cursor: pointer;
@@ -168,4 +168,5 @@
 }
 #create-btn:hover {
   cursor: pointer;
+  transform: scale(1.1);
 }
