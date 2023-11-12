@@ -8,9 +8,6 @@
     export let listFilters = {};
     console.log("List filters " + JSON.stringify(listFilters));
 
-    // TODO : Remove below before submssion
-    listFilters["excludeUser"] = false;
-
     let showPost = false;
     let currPost = null;
 </script>
