@@ -61,7 +61,7 @@
     width: 100%;
   }
   #inner1 {
-    text-overflow: ellipsis;
+    text-overflow: wrap;
     overflow: hidden;
     padding-top: 20px;
     font-weight: bold;    
