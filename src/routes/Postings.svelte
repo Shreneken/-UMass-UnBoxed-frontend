@@ -2,7 +2,7 @@
     import GetPost from "./GetPost.svelte";
   import { makeAuthenticatedRequest } from "./auth/store.js";
   import { Postings, Post } from "./utils/postings.js";
-  import Post from "./Post.svelte";
+  import PostCard from "./PostCard.svelte";
 
   export let listFilters = {};
   console.log("List filters " + JSON.stringify(listFilters));
@@ -127,7 +127,7 @@
   <div id="posting-grid">
     {#each Postings.fromJson(postsInfo).getListPosts() as post}
       <div id="post-grid-item">
-        <Post {post} />
+        <PostCard {post} />
       </div>
     {/each}
   </div>
