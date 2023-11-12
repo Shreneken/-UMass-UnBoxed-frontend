@@ -12,12 +12,12 @@
 }
 
 .modal-content {
-  top: 70px;
+  top: 10%;
   background: #fff;
   padding: 20px;
   border-radius: 8px;
   position: relative;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -51,7 +51,7 @@
 }
 
 #submit-btn {
-  background-color: orange;
+  background-color: #881c1c;
   color: #fff;
   padding: 12px;
   cursor: pointer;
@@ -67,4 +67,12 @@
 
 #title {
   text-align: center;
+  font-family: sans-serif;
+  color: #881c1c;
+}
+
+#category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
