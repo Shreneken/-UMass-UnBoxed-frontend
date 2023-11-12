@@ -5,12 +5,12 @@
   overflow: hidden;
 }
 #top-container {
-  display: inline-flex;
+  display: flex;
   width: 100%;
   min-height: 80px;
   margin: 0;
   position: sticky;
-  /* top: 0; */
+  top: 0;
 }
 .top-item {
   flex: 1;
@@ -61,7 +61,8 @@
 
 .top-item:last-child {
   flex: 0 0 10%;
-  background: linear-gradient(#443030, #333333);
+  /* background: linear-gradient(#443030, #333333); */
+  background: linear-gradient(to right, #443030, #564545);
 }
 #account-logo {
   width: 70%;
