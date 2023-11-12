@@ -8,29 +8,27 @@
     let currPost = null;
 </script>
 
-{#await makeAuthenticatedRequest("postings/get", undefined, { user: true })}
+{#await makeAuthenticatedRequest("postings/get", { user: true })}
     Loading details...
 {:then postsInfo}
-<div id="posting-grid">
-    {#each Postings.fromJson(postsInfo.postings).getListPosts() as post}
-        <div
-            id="post-grid-item"
-            on:click={() => {
-                showPost = true;
-                currPost = post;
-            }}
-        >
-            <PostCard {post} />
-        </div>
-    {/each}
-</div>
+    <div id="posting-grid">
+        {#each Postings.fromJson(postsInfo.postings).getListPosts() as post}
+            <div
+                id="post-grid-item"
+                on:click={() => {
+                    showPost = true;
+                    currPost = post;
+                }}
+            >
+                <PostCard {post} />
+            </div>
+        {/each}
+    </div>
 {:catch someError}
-System error: {someError.message}.
+    System error: {someError.message}.
 {/await}
 
 <GetPost bind:show={showPost} {currPost} />
 
-
 <style>
-
 </style>

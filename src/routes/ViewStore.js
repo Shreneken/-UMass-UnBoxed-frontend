@@ -7,5 +7,5 @@ export const viewStore = writable({
     userPostings: 3,
     allPostings: 4,
     current: 1,
-    filterData: [],
+    filterData: {},
 });
