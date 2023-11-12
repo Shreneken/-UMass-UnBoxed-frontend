@@ -1,5 +1,5 @@
 <script>
-  import { AREAS } from "./utils/constants.js";
+  import { AREAS, CATEGORIES } from "./utils/constants.js";
   import { viewStore } from "./ViewStore.js";
   import Postings from "./Postings.svelte";
 
@@ -9,11 +9,17 @@
     $viewStore.current = $viewStore.allPostings;
     $viewStore.filterData = { "residential-hall": areaName };
   }
-
 </script>
 
 <div id="home-container">
-  <div id="side-bar" />
+  <div id="side-bar">
+    {#each CATEGORIES as category}
+      <button value={category} class="side-item">
+      <img src="asdad" alt="catImg"/>
+      {category}
+      </button>
+    {/each}
+  </div>
   <div id="postings">
     <Postings />
   </div>
