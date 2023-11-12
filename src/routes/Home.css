@@ -14,7 +14,7 @@
   border-right: solid black 1px;
   display: flex;
   flex-direction: column;
-  height: 541px;
+  height: calc(100% - (80px + 35px));
 }
 
 .side-item-unselected {
