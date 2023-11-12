@@ -1,5 +1,5 @@
 <script>
-    import GetPost from "./GetPost.svelte";
+  import GetPost from "./GetPost.svelte";
   import { makeAuthenticatedRequest } from "./auth/store.js";
   import { Postings, Post } from "./utils/postings.js";
   import PostCard from "./PostCard.svelte";
@@ -7,7 +7,8 @@
   export let listFilters = {};
   console.log("List filters " + JSON.stringify(listFilters));
 
-    let showPost = false;
+  let showPost = false;
+  let currPost = null;
 
   async function dummyPostsInfo() {
     return [
@@ -126,7 +127,13 @@
 {:then postsInfo}
   <div id="posting-grid">
     {#each Postings.fromJson(postsInfo).getListPosts() as post}
-      <div id="post-grid-item">
+      <div
+        id="post-grid-item"
+        on:click={() => {
+          showPost = true;
+          currPost = post;
+        }}
+      >
         <PostCard {post} />
       </div>
     {/each}
@@ -135,17 +142,7 @@
   System error: {someError.message}.
 {/await}
 
-<button on:click={() => (showPost = true)}>Show Post</button>
-<GetPost
-    bind:show={showPost}
-    post={Post.fromJson({
-        name: "name",
-        price: "price",
-        image: "data:image/png;base64",
-        condition: "condition",
-        sellerId: "sellerId",
-    })}
-/>
+<GetPost bind:show={showPost} {currPost} />
 
 <style>
   @import "./Postings.css";

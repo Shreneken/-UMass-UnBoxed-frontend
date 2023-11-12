@@ -51,7 +51,7 @@
     <div id="search-bar">
         <select name="Category" class="search-item" bind:value={category}>
             <option value="All Areas" selected>All Areas</option>
-            {#each Object.values(AREAS) as area}
+            {#each AREAS as area}
                 <option value={area}>{area}</option>
             {/each} 
         </select>
