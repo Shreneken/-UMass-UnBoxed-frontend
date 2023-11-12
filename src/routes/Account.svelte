@@ -1,6 +1,5 @@
 <script>
     import { makeAuthenticatedRequest, user } from "./auth/store.js";
-    import { invalidate } from "$app/navigation";
 
     async function dummyUserInfo() {
         return { name: "lw", email: "jdoe@gmail.com" };

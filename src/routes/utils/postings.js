@@ -32,13 +32,19 @@ export class Post {
     }
 
     static fromJson(postData) {
-        return new Post(postData.name, postData.price, postData.image);
+        return new Post(
+            postData.name,
+            postData.price,
+            postData.image,
+            postData.condition,
+            postData.sellerId
+        );
     }
 }
 
 export class Postings {
-    constructor() {
-        this.listPosts = [];
+    constructor(listPosts) {
+        this.listPosts = listPosts;
     }
 
     getListPosts() {
@@ -50,10 +56,8 @@ export class Postings {
     }
 
     static fromJson(allPostsData) {
-        return new Post(
-            Object.entries(allPostsData).map((postData) =>
-                Post.fromJson(postData)
-            )
+        return new Postings(
+            allPostsData.map((postData) => Post.fromJson(postData))
         );
     }
 }
