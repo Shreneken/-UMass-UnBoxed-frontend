@@ -26,8 +26,6 @@
 
     user.subscribe((updatedUser) => {
         if (updatedUser !== null) {
-            console.log("User updated: " + updatedUser.uid);
-
             if (browser) {
                 localStorage.setItem("uid", updatedUser.uid);
                 localStorage.setItem("token", updatedUser.token);

@@ -34,6 +34,10 @@ export async function makeAuthenticatedRequest(
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`,
+                "Content-Type":
+                    isFormData === true
+                        ? "multipart/form-data"
+                        : "application/json",
             },
             body: isFormData === true ? reqBody : JSON.stringify(reqBody),
         });

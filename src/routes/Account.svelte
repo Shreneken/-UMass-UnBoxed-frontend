@@ -1,10 +1,6 @@
 <script>
     import { makeAuthenticatedRequest, user } from "./auth/store.js";
 
-    async function dummyUserInfo() {
-        return { name: "lw", email: "jdoe@gmail.com" };
-    }
-
     function performLogout() {
         user.set(null);
         localStorage.clear();
