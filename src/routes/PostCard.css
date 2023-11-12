@@ -34,6 +34,8 @@
 }
 
 #post-name {
+  text-overflow: ellipsis;
+  overflow: hidden;
   margin: 0;
   margin-left: 10px;
   font-weight: bold;

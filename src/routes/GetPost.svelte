@@ -13,19 +13,23 @@
       <h1 id="title">Listing Details</h1>
       <span class="close" on:click={close}>✕</span>
       <img src={currPost.getImage()} alt="Image not found" id="post-img" />
-      <p><strong>Name:</strong> {currPost.getName()}</p>
-      <p><strong>Price:</strong> {currPost.getPrice()}</p>
-      <p><strong>Condition:</strong> {currPost.getCondition()}</p>
-      <p>
-        <strong>Seller Contact:</strong>
-        <a href="mailto:{currPost.getSellerId()}">{currPost.getSellerId()}</a>
-      </p>
+      <div class="info-grid">
+        <p id="inner1">{currPost.getName()}</p>
+        <p id="inner2">${currPost.getPrice()}</p>
+        <p id="inner3">
+          <span class="label">Condition</span>
+          <br />
+          <span>{currPost.getCondition()}</span>
+        <p id="inner4">
+          <span class="label">Seller</span>
+          <a href="mailto:{currPost.getSellerId()}">{currPost.getSellerId()}</a>
+        </p>
+      </div>
     </div>
   </div>
 {/if}
 
 <style>
-  /* Add your modal styles here */
   .modal {
     display: block;
     position: fixed;
@@ -48,11 +52,45 @@
     margin: 0 auto;
   }
 
+  .info-grid {
+    display: grid;
+    grid-auto-flow: row;
+    font-family: Arial;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  #inner1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-top: 20px;
+    font-weight: bold;    
+    font-size: x-large;
+  }
+
+  #inner2 {
+    text-align: right;
+    font-weight: bold;    
+    font-size: 60px;
+  }
+
+  #inner3 {
+    font-size: large;
+  }
+
+  #inner4 {
+    text-align: right;
+    font-size: large;
+  }
+
+  .label {
+    text-decoration: underline;
+  }
+
   #post-img {
     width: 100%;
-    height: 100%;
+    height: 50%;
     object-fit: contain;
-    margin-top: 10px;
   }
   .close {
     position: absolute;
@@ -64,7 +102,7 @@
 
   p {
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   a {
