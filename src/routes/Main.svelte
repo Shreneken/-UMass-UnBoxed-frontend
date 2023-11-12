@@ -37,7 +37,7 @@
 
 <div id="container">
     <div id="top-container">
-        <img id="logo" class="top-item" src="/hacklogo.jpg" alt="logo" />
+        <img id="logo" class="top-item" src="/UMASS-UNBOXED-FULL.png" alt="logo" />
         <button id="home-btn" class="top-item" on:click={homeClick}>
             Home
         </button>

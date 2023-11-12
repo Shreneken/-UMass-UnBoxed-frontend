@@ -15,16 +15,25 @@
   flex-direction: column;
 }
 
-.side-item {
+.side-item-unselected {
   flex: 1;
   border: 0;
   color: #881c1c;
   font-size: larger;
 }
-.side-item:hover {
+.side-item-unselected:hover {
   background-color: #e6e6e6;
   border: 0;
 }
+
+.side-item-selected {
+  flex: 1;
+  border: 0;
+  background-color: #881c1c;
+  font-size: larger;
+  color: #e6e6e6;
+}
+
 
 #postings {
   flex-grow: 1;
