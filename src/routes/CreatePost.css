@@ -12,7 +12,7 @@
 }
 
 .modal-content {
-  top: 110px;
+  top: 70px;
   background: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -45,6 +45,7 @@
 .form-item {
   margin-bottom: 15px;
   padding: 10px;
+  resize: none;
   border: 1px solid #ddd;
   border-radius: 5px;
 }

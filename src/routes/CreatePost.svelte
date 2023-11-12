@@ -49,12 +49,13 @@
           class="form-item"
           required
         />
-        <input
-          type="text"
+        <textarea
           id="description"
           bind:value={description}
           placeholder="Description"
           class="form-item"
+          rows=3
+          cols=34
           required
         />
         <label for="image" id="image-label">Image: </label>
