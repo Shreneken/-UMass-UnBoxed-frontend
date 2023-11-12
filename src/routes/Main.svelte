@@ -25,7 +25,6 @@
   let category = "All Areas";
   function handleSubmitClick(e) {
     e.preventDefault();
-    $viewStore.current = $viewStore.allPostings;
     $viewStore.filterData = { category: category, queryText: queryText };
   }
 
@@ -40,7 +39,7 @@
     <img id="logo" class="top-item" src="/UMASS-UNBOXED-FULL.png" alt="logo" />
     <button id="home-btn" class="top-item" on:click={homeClick}> Home </button>
     <button id="your-postings" class="top-item" on:click={postingsClick}>
-      Postings
+      My Listings
     </button>
     <button id="account" class="top-item" on:click={accountClick}>
       <img src="/white-profile.png" alt="Account" id="account-logo"/>

@@ -57,7 +57,7 @@
 #search-bar {
   display: inline-flex;
   width: 100%;
-  min-height: 35px;
+  min-height: 45px;
   margin: 0;
   position: sticky;
 }
@@ -96,7 +96,11 @@
 
 #main-view {
   flex-grow: 1;
-  background-color: gray;
+  background-image: url("/umass-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.9;
 }
 #create-btn {
   position: fixed;
