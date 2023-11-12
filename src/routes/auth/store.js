@@ -30,15 +30,15 @@ export async function makeAuthenticatedRequest(
             }
         );
     } else {
+        let headers = { Authorization: `Bearer ${token}` };
+
+        if (!isFormData) {
+            headers["Content-Type"] = "application/json";
+        }
+
         response = fetch(`${SERVER_URL}/${endpoint}?uid=${uid}`, {
             method: "POST",
-            headers: {
-                Authorization: `Bearer ${token}`,
-                "Content-Type":
-                    isFormData === true
-                        ? "multipart/form-data"
-                        : "application/json",
-            },
+            headers: headers,
             body: isFormData === true ? reqBody : JSON.stringify(reqBody),
         });
     }
