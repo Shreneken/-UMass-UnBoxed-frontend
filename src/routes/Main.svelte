@@ -2,9 +2,9 @@
   import { viewStore } from "./ViewStore.js";
   import Home from "./Home.svelte";
   import Account from "./Account.svelte";
-  import Postings from "./Postings.svelte";
   import { CATEGORIES } from "./utils/constants.js";
   import CreatePost from "./CreatePost.svelte";
+    import UserPostings from "./UserPostings.svelte";
 
   function homeClick(e) {
     e.preventDefault();
@@ -56,7 +56,7 @@
     {#if $viewStore.current === $viewStore.home}
       <Home />
     {:else if $viewStore.current === $viewStore.userPostings}
-      <Postings />
+      <UserPostings />
     {:else if $viewStore.current === $viewStore.account}
       <Account />
     {/if}
