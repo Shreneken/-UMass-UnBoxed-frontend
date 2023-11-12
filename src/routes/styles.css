@@ -111,6 +111,11 @@
   border-radius: 50%;
   border: solid black 1px;
   font-size: xx-large;
+  background-color: #921b1b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #create-btn:hover {
   cursor: pointer;
