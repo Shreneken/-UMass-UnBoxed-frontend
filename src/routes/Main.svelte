@@ -67,9 +67,10 @@
       bind:value={queryText}
       class="search-item"
     />
-    <button id="submit" class="search-item" on:click={handleSubmitClick}
-      >Submit</button
-    >
+    <button class="search-item" id="search-logo" on:click={handleSubmitClick}>
+      <img src="/search-static.png" alt="Search" id="search-static" />
+      <img src="/search-animate.gif" alt="Search" id="search-animate"/>
+    </button>
   </div>
   <div id="main-view">
     {#if $viewStore.current === $viewStore.home}

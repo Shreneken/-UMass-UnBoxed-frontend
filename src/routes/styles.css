@@ -98,6 +98,8 @@
 .search-item:first-child {
   flex: 0 0 20%;
   text-align: center;
+  border-top: solid 0.5px black;
+  border-bottom: solid 0.5px black;
 }
 .search-item:first-child:hover {
   cursor: pointer;
@@ -112,6 +114,27 @@
 }
 .search-item:last-child:hover {
   cursor: pointer;
+}
+#search-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  align-items: center;
+  text-align: center;
+}
+#search-logo:hover img[id="search-animate"] {
+  display: block;
+}
+#search-logo:hover img[id="search-static"] {
+  display: none;
+}
+#search-animate {
+  display: none;
+  height: 90%;
+  padding-left: 58px;
+}
+#search-static {
+  height: 90%;
 }
 
 #main-view {
