@@ -6,7 +6,7 @@
         const areaName = e.target.id;
         console.log(`Clicked by ${areaName}`);
         $viewStore.current = $viewStore.allPostings;
-        $viewStore.filterData = { "residential-hall": areaName };
+        $viewStore.filterData = { "residentialHall": areaName };
     }
 </script>
 
