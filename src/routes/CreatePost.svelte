@@ -2,7 +2,13 @@
   import { makeAuthenticatedRequest } from "./auth/store.js";
   import { AREAS, CATEGORIES, CONDITIONS } from "./utils/constants.js";
   export let show = false;
-  let name, price, image, condition, description, resArea, categories;
+  let name,
+    price,
+    image,
+    condition,
+    description,
+    resArea,
+    categories = [];
   function close() {
     show = false;
   }
@@ -11,7 +17,7 @@
       alert("Please select your residential area");
       return;
     }
-    if (category === "Select a category") {
+    if (categories.length === 0) {
       alert("Please select a category");
       return;
     }
@@ -29,6 +35,13 @@
     formData.append("image", image);
     await makeAuthenticatedRequest("posting/create", formData, undefined, true);
     show = false;
+    name = null;
+    price = null;
+    image = null;
+    condition = null;
+    description = null;
+    resArea = null;
+    categories = [];
   }
 </script>
 
