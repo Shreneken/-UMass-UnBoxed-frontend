@@ -1,5 +1,5 @@
 <script>
-    import Login from "./Login.svelte";
+    import Screen from "./Login.svelte";
 </script>
 
-<Login />
+<Screen />
