@@ -23,7 +23,7 @@
     }
 </script>
 
-<!-- {#await makeAuthenticatedRequest("posts", undefined, {"user": $user.uid})} -->
+<!-- {#await makeAuthenticatedRequest("posts", undefined, {"user": true})} -->
 {#await dummyPostsInfo()}
     Loading details...
 {:then postsInfo}

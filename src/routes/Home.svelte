@@ -9,6 +9,12 @@
     $viewStore.current = $viewStore.allPostings;
     $viewStore.filterData = { "residential-hall": areaName };
   }
+    function handleAreaClick(e) {
+        const areaName = e.target.id;
+        console.log(`Clicked by ${areaName}`);
+        $viewStore.current = $viewStore.allPostings;
+        $viewStore.filterData = { "residentialHall": areaName };
+    }
 </script>
 
 <div id="home-container">
