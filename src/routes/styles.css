@@ -34,14 +34,24 @@
 .top-item:last-child {
   flex: 0 0 10%;
 }
-.top-item:first-child{
+.top-item:first-child {
   flex: 0 0 20%;
+  object-fit: contain;
+  /* height: 100%;
+  width: 80%; */
+  background-color: white;
 }
 .top-item:nth-child(2) {
   flex: 0 0 35%;
 }
 .top-item:nth-child(3) {
   flex: 0 0 35%;
+}
+
+#account-logo {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
 }
 
 #search-bar {

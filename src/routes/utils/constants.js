@@ -24,4 +24,18 @@ export const CATEGORIES = [
   "UMass Merch",
 ];
 
+export const CATEGORIES_IMAGES = {
+  Clothing: "/categories/clothing.png",
+  Decoration: "/categories/decoration.png",
+  Entertainment: "/categories/entertainment.png",
+  Furniture: "/categories/furniture.png",
+  "Free Stuff": "/categories/free-stuff.png",
+  "School Supplies": "/categories/school-supplies.png",
+  "Sports Goods": "/categories/sports-goods.png",
+  "Special Deals": "/categories/special-deals.png",
+  "Tech & Electronics": "/categories/tech-and-electronics.png",
+  Textbooks: "/categories/textbooks.png",
+  "UMass Merch": "/categories/umass-merch.png",
+};
+
 export const CONDITIONS = ["New", "Lightly Used", "Used"];

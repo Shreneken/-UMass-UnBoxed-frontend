@@ -1,5 +1,5 @@
 <script>
-  import { AREAS, CATEGORIES } from "./utils/constants.js";
+  import { AREAS, CATEGORIES, CATEGORIES_IMAGES } from "./utils/constants.js";
   import { viewStore } from "./ViewStore.js";
   import Postings from "./Postings.svelte";
   let listFilters = {};
@@ -27,7 +27,7 @@
           : "side-item-unselected"}
         on:click={handleCategoryClick}
       >
-        <img src="asdad" alt="catImg" />
+        <img src={CATEGORIES_IMAGES[category]} alt="catImg" id="cat-img" />
         {category}
       </button>
     {/each}
